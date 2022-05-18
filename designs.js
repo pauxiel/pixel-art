@@ -26,12 +26,17 @@ function makeGrid(e) {
       const tableData = document.createElement("td");
       tableData.style.backgroundColor = colorInput.value;
       tableRow.appendChild(tableData);
+      tableData.addEventListener("click", function(e) {
+        e.target.style.backgroundColor = colorInput.value;
+      })
     }
+    
     pixelCanvas.appendChild(tableRow);
   }
+  
 }
 
-pixelCanvas.addEventListener("mousedown", function(e) {
-  if (e.target.tagName !== "TD") return;
-  e.target.style.backgroundColor = colorInput.value;
-});
+// tableData.addEventListener("mousedown", function(e) {
+//   if (e.target.tagName !== "TD") return;
+//   e.target.style.backgroundColor = colorInput.value;
+// });
